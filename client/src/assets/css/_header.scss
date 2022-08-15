@@ -1,0 +1,66 @@
+// header style
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+        width: 6em;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.2em;
+        margin-top: 0.2em;
+    
+        li a {
+            font-size: 0.8rem;
+            color: var(--secondary);
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+
+        li a.active {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+    }
+
+    .gear {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    header {
+        margin-top: 0.5em;
+        
+        .nav-links {
+            gap: 1.4em;
+
+            li a {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        justify-content: flex-start;
+        gap: 15em;
+
+        .gear {
+            display: block;
+            position: absolute;
+            top: -27em;
+            right: 5em;
+            width: 40em;
+            height: 40em;
+            z-index: -1;
+        }
+    }
+}

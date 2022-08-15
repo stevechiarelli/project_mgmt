@@ -1,0 +1,15 @@
+@import "global";
+@import "header";
+@import "hero";
+@import "demo";
+@import "project";
+@import "contact";
+
+:root {
+    --background: #F9F8FA;
+    --primary: #1d85ab;
+    --secondary: #222626;
+    --accent: #DCE5F7;
+    --primary-hover: #21708d;
+    --secondary-hover: #3C4444;
+}

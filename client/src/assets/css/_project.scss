@@ -1,0 +1,153 @@
+// project style
+
+.project {
+    position: relative;
+    margin: 4em 0;
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+
+        h1, p {
+            margin: 0;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5em;
+            
+            .btn-primary {
+                align-self: flex-end;
+                height: 100%;
+                padding-top: 0.7em;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 1rem;
+
+        span {
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .info {
+        margin: 2em 0 0.5em 0;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .status {
+        font-size: 1em;
+    }
+
+    ul {
+        border: 1px solid #AAC2C2;
+        border-radius: 12px;
+        background: #fff;
+        padding: 0.5em;
+
+        li {
+            border-bottom: 1px solid #AAC2C2;
+            padding: 0.5em;
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+
+    label {
+        color: var(--secondary);
+    }
+
+    input, textarea, select {
+        display: block;
+        width: 100%;
+        padding: 0.9em;
+        border: 1px solid #AAC2C2;
+        border-radius: 12px;
+        margin: 0.3em 0 0.8em 0;
+    }
+
+    .btn-group {
+        display: flex;
+        gap: 0.5em;
+        margin-top: 2em;
+    }
+
+    .client-info {
+        li span {
+            margin-right: 1em;
+        }
+    }
+
+    &:before {
+        content: '';
+        background: url('../images/star1.svg');
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 0;
+        right: 4em;
+        width: 2em;
+        height: 2em;
+    }
+
+    &:after {
+        content: '';
+        background: url('../images/swirl1.svg');
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -3em;
+        left: 0;
+        width: 2em;
+        height: 2em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .project {
+        margin: 6em 0;
+        padding-left: 15em;
+
+        .project-header {
+            position: relative;
+
+            &:before {
+                content: '';
+                background: url('../images/gear_art_alt.svg');
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 0;
+                left: -35em;
+                width: 30em;
+                height: 30em;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .project {
+        padding: 0 15em;
+
+        .project-header {
+            &:after {
+                content: '';
+                background: url('../images/dots.svg');
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 10em;
+                right: -10em;
+                width: 5em;
+                height: 5em;
+            }
+        }
+    }
+}

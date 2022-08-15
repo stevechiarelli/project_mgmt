@@ -1,0 +1,138 @@
+// global style
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--secondary);
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--background);
+    font-size: 1.1rem;
+    padding: 0.8em 1em; 
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--primary-hover);
+    }
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    font-size: 1.1rem;
+    padding: 0.7em 0.9em; 
+    font-weight: bold;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--primary-hover);
+        color: var(--background);
+    }
+}
+
+.btn-small {
+    font-size: 0.9rem;
+    padding: 0.4em 0.6em;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.loading {
+    position: fixed;
+    background-color: hsla(0, 0%, 0%, 0.3);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+    img {
+        margin: auto;
+        display: block;
+        width: 100px;
+    }
+}
+
+.error {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        text-align: center;
+
+        h1 {
+            font-size: 5em;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 1.4em;
+        }
+
+        p {
+            margin-bottom: 3em;
+            color: var(--primary);
+        }
+    }
+}
+
+.container {
+    padding: 1em 1.5em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px) {
+    .container {
+        padding: 1em 3em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        padding: 1em 4em;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .btn-primary {
+        font-size: 1.2rem;
+        padding: 0.9em 1.4em; 
+    }
+
+    .btn-small {
+        font-size: 1rem;
+        padding: 0.5em 0.7em;
+    }
+}
