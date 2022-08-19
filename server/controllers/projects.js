@@ -31,8 +31,8 @@ export const addProject = async (req, res) => {
     const newProject = ProjectModel(project);
 
     try {
-        await newProject.save();
-        res.status(201).json(newProject);
+        const project = await newProject.save();
+        res.status(201).json(project);
     }
     catch {
         res.status(409).json({ message: error.message });
@@ -60,6 +60,6 @@ export const deleteProject = async (req, res) => {
         return res.status(404).send("No project with that id");
     }
 
-    await ProjectModel.findByIdAndRemove(_id);
-    res.json({ message: "Project deleted successfully"});
+    const project = await ProjectModel.findByIdAndRemove(_id);
+    res.json(project);
 }

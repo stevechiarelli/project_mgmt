@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/getProjects", getProjects);
 router.get("/getProject/:id", getProject);
 router.post("/addProject", addProject);
-router.patch("/updateProject/:id", updateProject);
+router.put("/updateProject/:id", updateProject);
 router.delete("/deleteProject/:id", deleteProject);
 
 // Clients

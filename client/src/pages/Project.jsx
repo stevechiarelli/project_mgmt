@@ -25,8 +25,9 @@ const Project = () => {
                 setError(error);
             }
         }
+        
         getProject();
-    });
+    }, []);
 
     if (error) {
         return <p>An error occured when loading this section.</p>
@@ -45,14 +46,14 @@ const Project = () => {
                         <p>{project.description}</p>
                     </div>
                     <div className="btn-group">
-                        <ProjectDelete projectId={project.id} />
+                        <ProjectDelete projectId={id} />
                         <Link to="/demo" aria-label="delete" className="btn-primary btn-small"><FaArrowLeft /></Link>
                     </div>
                 </div>
 
                 <p className="status">Project status: <span>{project.status}</span></p>
                 
-                <ClientInfo client={project.client} />
+                <ClientInfo clientId={project.clientId} />
 
                 <h2>Update Project Details</h2>
 

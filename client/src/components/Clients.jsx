@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { ClientsContext } from "../context/ClientsContext";
 import API from "../Api";
 import ClientData from "./ClientData";
 import Loading from "./Loading";
 
 const Clients = () => {
-    const [clients, setClients] = useState([]);
+    const {clients, dispatch} = useContext(ClientsContext);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -12,7 +13,7 @@ const Clients = () => {
         const getClients = async () => {
             try {
                 const response = await API.get("/getClients");
-                setClients(response.data);
+                dispatch({type: "SET_CLIENT", payload: response.data});
                 setLoading(false);
             }
             catch (error) {
@@ -20,7 +21,7 @@ const Clients = () => {
             }
         }
         getClients();
-    }, []);
+    }, [dispatch]);
 
     if (error) {
         return <p>An error occured when loading this section.</p>

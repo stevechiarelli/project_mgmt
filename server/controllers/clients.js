@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import ClientModel from "../models/client.model.js";
+import ProjectModel from "../models/project.model.js"
 
 // Get all clients
 export const getClients = async (req, res) => {
@@ -31,8 +32,8 @@ export const addClient = async (req, res) => {
     const newClient = ClientModel(client);
 
     try {
-        await newClient.save();
-        res.status(201).json(newClient);
+        const client = await newClient.save();
+        res.status(201).json(client);
     }
     catch {
         res.status(409).json({ message: error.message });
@@ -47,6 +48,7 @@ export const deleteClient = async (req, res) => {
         return res.status(404).send("No client with that id");
     }
 
-    await ClientModel.findByIdAndRemove(_id);
-    res.json({ message: "Client deleted successfully"});
+    const client = await ClientModel.findByIdAndRemove(_id);
+    const project = await ProjectModel.deleteMany({ clientId: _id });
+    res.json({client, project});
 }
